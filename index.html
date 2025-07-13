@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Malla Curricular - Medicina UDELAR</title>
+  <title>Malla Curricular - Turismo UNLA </title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -25,14 +25,14 @@
       min-width: 300px;
       flex-shrink: 0;
     }
-    .semestre {
+    .cuatrimestre {
       background-color: #f9e1f1;
       border: 2px solid #c89cf5;
       padding: 15px;
       margin: 10px 0;
       border-radius: 15px;
     }
-    .semestre:nth-child(even) {
+    .cuatrimestre:nth-child(even) {
       background-color: #e6d6fa;
     }
     .materia {
@@ -57,105 +57,83 @@
 </head>
 <body>
 
-  <h1>Malla Curricular - Medicina UDELAR</h1>
+  <h1>Malla Curricular - Turismo UNLA</h1>
 
   <div class="container" id="malla"></div>
 
   <script>
     const materias = [
       {
-        anio: "Primero", semestres: [
+        anio: "Primero", cuatrimestre: [
           {
-            numero: "1º semestre", materias: [
-              { id: "bio_intro", nombre: "Introducción a la Biología Celular y Molecular" },
-              { id: "bioest", nombre: "Introducción a la Bioestadística" },
-              { id: "bioetica", nombre: "Salud y Humanidades y Bioética" },
-              { id: "at1", nombre: "Aprendizaje en Territorio 1" }
+            numero: "1º cuatrimestre", materias: [
+              { id: "01", nombre: "Introducción al turismo" }, 
+              { id: "02", nombre: "Introducción a la geografía" },
+              { id: "03", nombre: "Estado, derecho y legislación" },
+              { id: "04", nombre: "Principios de la economía" }
             ]
           },
           {
-            numero: "2º semestre", materias: [
-              { id: "bio", nombre: "Biología Celular y Molecular", previas: ["bio_intro"] },
-              { id: "at2", nombre: "Aprendizaje en Territorio 2", previas: ["at1"] }
+            numero: "2º cuatrimestre", materias: [
+              { id: "05", nombre: "Organización y gestión de la empresa turística", previas: ["01"] },
+              { id: "06", nombre: "Introducción a la matemática" },
+              { id: "07", nombre: "Espacios turísticos de África, Asia y Oceanía", previas: ["02"] }
+              { id: "08", nombre: "Procesos históricos mundiales" }
             ]
           }
         ]
       },
       {
-        anio: "Segundo", semestres: [
+        anio: "Segundo", cuatrimestre: [
           {
-            numero: "3º semestre", materias: [
-              { id: "anatomia", nombre: "Anatomía (CBCC2)", previas: ["bioetica"] },
-              { id: "histobiof", nombre: "Histología y Biofísica (CBCC2)", previas: ["bio"] }
+            numero: "3º cuatrimestre", materias: [
+              { id: "09", nombre: "Servicios turísticos I", previas: ["01"] },
+              { id: "10", nombre: "Espacios turísticos de Europa", previas: ["02"] }
+              { id: "11", nombre: "Metodología de la Investigación Social" }, 
+              { id: "12", nombre: "Historia latinoamericana y argentina", previas: ["08"] }
+              { id: "13", nombre: "Organización y gestión hotelera", previas: ["05"] }
             ]
           },
           {
-            numero: "4º semestre", materias: [
-              { id: "histoneuro", nombre: "Histología (Neuro y Cardio)", previas: ["bio"] },
-              { id: "neuro", nombre: "Neurociencias", previas: ["bio"] },
-              { id: "cardioresp", nombre: "Cardiovascular y Respiratorio", previas: ["bio"] }
+            numero: "4º cuatrimestre", materias: [
+              { id: "14", nombre: "Servicios turísticos II", previas: ["09"] },
+              { id: "15", nombre: "Espacios turísticos de Amércica", previas: ["02"] },
+              { id: "16", nombre: "	Marketing", previas: ["09", "13"] }
+              { id: "17", nombre: "	Indicadores turísticos", previas: ["06"] }
+              { id: "18", nombre: "	Historia del turismo", previas: ["01, "08"] }
             ]
           }
         ]
       },
       {
-        anio: "Tercero", semestres: [
+        anio: "Tercero", cuatrimestre: [
           {
-            numero: "5º semestre", materias: [
-              { id: "cbcc5", nombre: "Digestivo, Renal, Endocrino, Metabólico y Reproductor", previas: ["bio", "anatomia"] }
+            numero: "5º cuatrimestre", materias: [
+              { id: "19", nombre: "Taller de investigación turística", previas: ["01", "11", "17"] }
+              { id: "20", nombre: "Espacios turísticos de Argentina", previas: ["02"] }
+              { id: "21", nombre: "Análisis económico y financiero de la actividad turística", previas: ["04", "05"] }
+              { id: "22", nombre: "	Ética profesional y responsabilidad social", previas: ["01"] }
             ]
           },
           {
-            numero: "6º semestre", materias: [
-              { id: "b6", nombre: "Hematología e Inmunobiología", previas: ["bio"] },
-              { id: "met1", nombre: "Metodología Científica 1", previas: ["bioest", "cbcc5"] }
+            numero: "6º cuatrimestre", materias: [
+              { id: "23", nombre: "Taller de formulación y evaluación de proyectos", previas: ["19", "21"] },
+              { id: "24", nombre: "Patrimonio histórico - cultural argentino", previas: ["01", "12"] }
+              { id: "25", nombre: "Marco normativo de la actividad turística", previas: ["03", "13", "14"] }
+              { id: "26", nombre: "Práctica pre-profesional", previas: ["03", "13", "14", "20", "21", "22"] }
             ]
           }
         ]
       },
       {
-        anio: "Cuarto", semestres: [
-          {
-            numero: "7º semestre", materias: [
-              { id: "m4pna", nombre: "Medicina en el Primer Nivel de Atención", previas: ["cbcc5", "b6", "met1"] },
-              { id: "m4bcp", nombre: "Bases Científicas de la Patología", previas: ["cbcc5", "b6", "met1"] }
-            ]
-          },
-          {
-            numero: "8º semestre", materias: [
-              { id: "pediatria", nombre: "Pediatría", previas: ["cbcc5", "b6", "met1"] },
-              { id: "gineco", nombre: "Ginecología y Neonatología", previas: ["cbcc5", "b6", "met1"] }
-            ]
-          }
-        ]
-      },
-      {
-        anio: "Quinto", semestres: [
-          {
-            numero: "9º y 10º semestre", materias: [
-              { id: "clinica", nombre: "Clínica Médica", previas: ["m4pna", "m4bcp"] },
-              { id: "patomed", nombre: "Patología Médica y Terapéutica", previas: ["m4bcp"] }
-            ]
-          }
-        ]
-      },
-      {
-        anio: "Sexto", semestres: [
-          {
-            numero: "11º y 12º semestre", materias: [
-              { id: "clinicaq", nombre: "Clínica Quirúrgica", previas: ["m4pna", "m4bcp"] },
-              { id: "patoquir", nombre: "Patología Quirúrgica", previas: ["m4bcp"] },
-              { id: "mfc", nombre: "MFC – Salud Mental en Comunidad – Psicología Médica", previas: ["m4pna"] },
-              { id: "met2", nombre: "Metodología Científica 2", previas: ["m4pna", "m4bcp"] }
-            ]
-          }
-        ]
-      },
-      {
-        anio: "Séptimo", semestres: [
-          {
-            numero: "13º y 14º semestre", materias: [
-              { id: "internado", nombre: "Internado Obligatorio", previas: ["clinica", "patomed", "clinicaq", "patoquir", "mfc", "met2"] }
+       numero: "Idiomas, seminarios, etc", materias: [   
+              { id: "ingles1", nombre: "Inglés I", 
+              { id: "ingles2", nombre: "ingles 2", previas: ["ingles1"] }
+              { id: "portugues1", nombre: "portugues 1", }
+              { id: "portugues2", nombre: "portugues 2", previas: ["portugues1"] }
+              { id: "informatica", nombre: "Informática: Módulo Gestión de reservas", }
+              { id: "sem1", nombre: "Seminario de Pensamiento Nacional y Latinoamericano", }
+              { id: "sem2", nombre: "Seminario de Justicia y Derechos Humanos", }
             ]
           }
         ]
