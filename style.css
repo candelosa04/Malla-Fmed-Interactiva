@@ -1,64 +1,83 @@
-body {
-  font-family: sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Curricular - Turismo UNLA </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      margin: 0;
+      padding: 0;
+    }
 
-h1 {
-  color: purple;
-  margin-top: 20px;
-}
+    h1 {
+      text-align: center;
+      color: #7c4dff;
+      margin-top: 20px;
+    }
 
-.carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 20px;
-  padding: 20px;
-}
+    .container {
+      display: flex;
+      overflow-x: auto;
+      padding: 20px;
+      gap: 20px;
+    }
 
-.year {
-  flex: 0 0 auto;
-  width: 300px;
-  scroll-snap-align: start;
-  border-radius: 10px;
-}
+    .year {
+      min-width: 300px;
+      flex-shrink: 0;
+    }
 
-h2 {
-  color: purple;
-}
+    .cuatrimestre {
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 20px;
+    }
 
-.semester {
-  margin: 10px;
-  border: 2px solid #c19ff0;
-  padding: 10px;
-  border-radius: 10px;
-}
+    /* Colores pastel por cuatrimestre */
+    .cuatrimestre:nth-child(1) { background-color: #fce4ec; }  /* rosa claro */
+    .cuatrimestre:nth-child(2) { background-color: #e3f2fd; }  /* celeste claro */
+    .cuatrimestre:nth-child(3) { background-color: #f3e5f5; }  /* lila claro */
+    .cuatrimestre:nth-child(4) { background-color: #e8f5e9; }  /* verde claro */
+    .cuatrimestre:nth-child(5) { background-color: #fff8e1; }  /* amarillo claro */
+    .cuatrimestre:nth-child(6) { background-color: #ede7f6; }  /* violeta claro */
 
-.pink {
-  background-color: #ffe4f1;
-}
+    .materia {
+      background-color: white;
+      border-radius: 20px;
+      padding: 12px;
+      margin: 8px 0;
+      cursor: pointer;
+      font-weight: bold;
+      color: #4a148c;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: 0.3s ease;
+    }
 
-.purple {
-  background-color: #f3d9ff;
-}
+    .materia:hover {
+      transform: scale(1.03);
+    }
 
-button {
-  display: block;
-  margin: 8px auto;
-  padding: 10px;
-  width: 90%;
-  background-color: white;
-  border: none;
-  border-left: 5px solid purple;
-  border-radius: 10px;
-  font-weight: bold;
-  color: purple;
-}
+    .materia.tachada {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
 
-button.disabled {
-  background-color: lightgray;
-  color: gray;
-  text-decoration: line-through;
-}
+    .materia.bloqueada {
+      background-color: #e0e0e0;
+      color: gray;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Malla Curricular - Turismo UNLA</h1>
+  <div class="container" id="malla"></div>
+  <script src="script.js"></script>
+
+</body>
+</html>
